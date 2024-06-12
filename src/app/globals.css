@@ -3,31 +3,94 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+	--foreground-rgb: 0, 0, 0;
+	--background-start-rgb: 214, 219, 220;
+	--background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+	box-sizing: border-box;
 }
-
+html,
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+	margin: 0;
+	padding: 0;
+}
+main {
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+main > .mainSectionLayout {
+	position: sticky;
+	height: 100vh;
+	width: 100vw;
+	top: 0;
+	font-size: 1.5rem;
+	font-weight: bold;
+	/* overflowX:'hidden' */
+}
+
+main > .mainSectionLayout > .background {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	background-image: url(/background-pattern.jpg);
+	background-position: center;
+	filter: blur(1px);
+	background-size: cover;
+	color: black;
+}
+main > .mainSectionLayout > .contentLayout {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	display: flex;
+	align-items: start;
+	justify-content: space-between;
+	flex-direction: column;
+	color: rgb(104, 109, 118);
+	overflow-y: hidden;
+}
+main > .mainSectionLayout > .contentLayout > .content {
+	flex-grow: 10;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	align-items: stretch;
+}
+main > .mainSectionLayout > .contentLayout > .content > div {
+	display: flex;
+	flex-grow: 1;
+}
+
+main > .mainSectionLayout > .contentLayout > .scrollDown {
+	flex-grow: 1;
+	display: flex;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	width: 100%;
+	background-color: transparent;
+	justify-content: center;
+	align-items: center;
+}
+@keyframes bounce {
+	0%,
+	20%,
+	50%,
+	80%,
+	100% {
+		transform: translateY(0);
+	}
+	40% {
+		transform: translateY(-30px);
+	}
+	60% {
+		transform: translateY(-15px);
+	}
 }
