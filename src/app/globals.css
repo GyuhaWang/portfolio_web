@@ -11,6 +11,7 @@
 * {
 	box-sizing: border-box;
 }
+
 html,
 body {
 	margin: 0;
@@ -79,6 +80,69 @@ main > .mainSectionLayout > .contentLayout > .scrollDown {
 	justify-content: center;
 	align-items: center;
 }
+
+main > .aboutMeSectionLayout {
+	position:relative;
+	background-color:#0b0c10;
+	color:rgb(238, 238, 238);
+	display: flex;
+	flex-direction: row; 
+
+}
+
+
+.sidebar {
+	position:sticky;
+      height:100vh;
+      top:0;
+      min-width:'14rem';
+      background-color:#0b0c10;
+      padding-left:2rem;
+      padding-top:2rem;
+
+    
+}
+
+.aboutMeLayout {
+	min-height:100vh;
+    width:100%;
+    display:flex;  
+    flex-grow:1;
+    flex-direction:column; 
+    justify-content:center;
+    align-items:start;
+    padding:2rem;
+    border-bottom: 1px dashed #45a291;
+}
+.imageBox {
+	position:relative;
+    padding: 12px;
+    background-color: #c5c6c7;
+    border-radius:100%;
+    color:black;
+	display: flex;
+	align-items: center;
+}
+
+.imageBox > .effect {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius:100%;
+	transition: height 0.1s ease-in;
+}
+
+.imageBox > .effect > span {
+	color: white;
+    font-size: 1rem;
+    text-transform:uppercase;
+}
 @keyframes bounce {
 	0%,
 	20%,
@@ -93,4 +157,19 @@ main > .mainSectionLayout > .contentLayout > .scrollDown {
 	60% {
 		transform: translateY(-15px);
 	}
+}
+@media (max-width: 768px) {
+	main > .aboutMeSectionLayout {
+   		flex-direction: column;
+   }
+   .sidebar {
+	
+	top:0;
+   	height:auto;
+	display:flex;
+	z-index:2;
+	padding:0;
+	justify-content:space-around;
+		   
+   }
 }

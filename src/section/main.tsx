@@ -3,9 +3,9 @@ import ScrollDownButton from '@/component/scrollDownButton';
 import { useScroll } from '@/hook/useScroll';
 
 const Main = () => {
-	console.log('this is main');
+	console.log('main page loaded');
 	return (
-		<div className="mainSectionLayout">
+		<section className="mainSectionLayout">
 			<div className="background" />
 			<div className="contentLayout">
 				<div className="content">
@@ -25,7 +25,7 @@ const Main = () => {
 					<ScrollDownButton />
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 
