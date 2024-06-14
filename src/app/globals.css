@@ -22,7 +22,7 @@ main {
 	flex-direction: column;
 	padding: 0;
 	margin: 0;
-	overflow-x: hidden;
+	/* overflow-x: hidden; */
 }
 
 main > .mainSectionLayout {
@@ -55,7 +55,7 @@ main > .mainSectionLayout > .contentLayout {
 	justify-content: space-between;
 	flex-direction: column;
 	color: rgb(104, 109, 118);
-	overflow-y: hidden;
+	/* overflow-y: hidden; */
 }
 main > .mainSectionLayout > .contentLayout > .content {
 	flex-grow: 10;
@@ -82,44 +82,79 @@ main > .mainSectionLayout > .contentLayout > .scrollDown {
 }
 
 main > .aboutMeSectionLayout {
-	position:relative;
-	background-color:#0b0c10;
-	color:rgb(238, 238, 238);
+	position: relative;
+	background-color: #0b0c10;
+	color: rgb(238, 238, 238);
 	display: flex;
-	flex-direction: row; 
-
+	flex-direction: row;
 }
 
-
 .sidebar {
-	position:sticky;
-      height:100vh;
-      top:0;
-      min-width:'14rem';
-      background-color:#0b0c10;
-      padding-left:2rem;
-      padding-top:2rem;
-
-    
+	position: sticky;
+	height: 100vh;
+	top: 0;
+	min-width: '14rem';
+	background-color: #0b0c10;
+	padding-left: 2rem;
+	padding-top: 2rem;
 }
 
 .aboutMeLayout {
-	min-height:100vh;
-    width:100%;
-    display:flex;  
-    flex-grow:1;
-    flex-direction:column; 
-    justify-content:center;
-    align-items:start;
-    padding:2rem;
-    border-bottom: 1px dashed #45a291;
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	flex-grow: 1;
+	flex-direction: column;
+	justify-content: center;
+	align-items: start;
+	padding: 2rem;
+	border-bottom: 1px dashed #45a291;
+}
+.aboutMeLayout > .skillHeader {
+	text-transform: uppercase;
+}
+.aboutMeLayout > .skillDiv {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	gap: 12px;
+}
+.aboutMeLayout > .educationDiv {
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+}
+.aboutMeLayout > .educationDiv > div > .educationTitle {
+	text-transform: uppercase;
+}
+.aboutMeLayout > .educationDiv > div > .educationList {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.aboutMeLayout > .projectLayout {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	grid-template-rows: minmax(400px, auto);
+	gap: 2rem;
+	width: 100%;
+}
+.durationBox {
+	border-radius: 4px;
+	background-color: #eeeeee;
+	padding: 4px 6px 2px 6px;
+	color: #a91d3a;
+	display: inline-block;
+	font-size: 12px;
+	font-weight: bold;
 }
 .imageBox {
-	position:relative;
-    padding: 12px;
-    background-color: #c5c6c7;
-    border-radius:100%;
-    color:black;
+	position: relative;
+	padding: 12px;
+	background-color: #c5c6c7;
+	border-radius: 100%;
+	color: black;
 	display: flex;
 	align-items: center;
 }
@@ -134,14 +169,91 @@ main > .aboutMeSectionLayout {
 	align-items: center;
 	justify-content: center;
 	background-color: rgba(0, 0, 0, 0.5);
-	border-radius:100%;
+	border-radius: 100%;
 	transition: height 0.1s ease-in;
 }
 
 .imageBox > .effect > span {
 	color: white;
-    font-size: 1rem;
-    text-transform:uppercase;
+	font-size: 1rem;
+	text-transform: uppercase;
+}
+
+.skillBox {
+	border-radius: 4px;
+	background-color: #eeeeee;
+	padding: 4px 6px 2px 6px;
+	color: black;
+	word-wrap: break-word;
+	font-size: 0.8rem;
+	font-weight: bold;
+}
+
+.projectBox {
+	position: relative;
+	background-color: white;
+	color: black;
+	border-radius: 8px;
+	display: flex;
+	height: 100%;
+	word-wrap: break-word;
+}
+.projectBox > .stackLayout {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 2;
+	padding: 14px;
+	justify-content: start;
+	gap: 2px;
+	max-width: 20%;
+}
+.projectBox > .effect {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(254, 174, 111, 0.8);
+	border-radius: 8px;
+	transition: width 0.2s ease-in-out;
+}
+.projectBox > .effect > div {
+	color: white;
+	font-size: 1rem;
+	text-transform: uppercase;
+	display: flex;
+	flex-direction: column;
+}
+.projectBox > .head {
+	display: flex;
+	flex-grow: 1;
+	border-top-left-radius: 8px;
+	border-bottom-left-radius: 8px;
+	padding: 1.5rem;
+}
+.projectLink {
+	display: flex;
+	width: 8rem;
+	aspect-ratio: 10/4;
+	background-color: transparent;
+	align-items: center;
+	justify-content: center;
+	color: black;
+	border: 2px solid black;
+	font-size: 100%;
+	font-weight: bold;
+}
+.participantBox {
+	border-radius: 4px;
+	background-color: #eeeeee;
+	padding: 4px 6px 2px 6px;
+	color: #a91d3a;
+	display: inline-block;
+	font-size: 12px;
+	font-weight: bold;
 }
 @keyframes bounce {
 	0%,
@@ -160,16 +272,29 @@ main > .aboutMeSectionLayout {
 }
 @media (max-width: 768px) {
 	main > .aboutMeSectionLayout {
-   		flex-direction: column;
-   }
-   .sidebar {
-	
-	top:0;
-   	height:auto;
-	display:flex;
-	z-index:2;
-	padding:0;
-	justify-content:space-around;
-		   
-   }
+		flex-direction: column;
+	}
+	.sidebar {
+		top: 0;
+		height: auto;
+		display: flex;
+		z-index: 2;
+		padding: 0;
+		justify-content: space-around;
+	}
+	.projectLayout {
+		grid-template-columns: 1fr;
+	}
+	.projectBox {
+		flex-direction: column;
+	}
+	.projectBox > .head {
+		border-top-right-radius: 8px;
+		border-bottom-left-radius: 0px;
+	}
+	.projectBox > .stackLayout {
+		flex-direction: row;
+		flex-wrap: wrap;
+		max-width: 100%;
+	}
 }
