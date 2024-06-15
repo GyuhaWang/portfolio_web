@@ -16,8 +16,8 @@ const ProjectBox = ({
 			className="projectBox"
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}>
-			<div className={`head  bg-secondary`} />
-			<div className="flex flex-col p-4 gap-8 justify-start grow-[7]">
+			<div className={`head  bg-secondary `} />
+			<div className="flex flex-col p-4 gap-8 justify-start grow-[7] w-[70%]">
 				<div className="flex flex-col gap-1">
 					<div className="text-3xl font-semibold">{data.title}</div>
 					<div className="text-sm font-medium"> {data.projectDetail}</div>
@@ -41,7 +41,7 @@ const ProjectBox = ({
 			</div>
 
 			<div className={`effect ${isHovered ? 'w-[100%]' : 'w-[0%]'}`}>
-				<div className={`${isHovered ? 'visible' : 'invisible'}`}>
+				<div className={`${isHovered ? 'visible' : 'invisible'} relative items-center justify-center`}>
 					{data.link && (
 						<a
 							className="projectLink"

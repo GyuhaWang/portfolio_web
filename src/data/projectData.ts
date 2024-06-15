@@ -44,9 +44,10 @@ export const projectData = [
             participantsNum:1,
             output:undefined,
             role:'프론트엔드, 배포',
-            stack:['next js','emotion','yarn'],
+            stack:['next js','tailwind','recoil'],
             content:[
-              ''
+              'next js, tailwind 사용하여 개발',
+              'aws amplify를 사용해서 배포'
                ],
             gitHub: '',
             blog:'',

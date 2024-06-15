@@ -11,7 +11,7 @@ const Skill = () => {
 		<section
 			id="skill"
 			ref={ref}>
-			<div className="aboutMeLayout">
+			<div className="aboutMeLayout gap-2">
 				<h1 className="skillHeader">language</h1>
 				<div className="skillDiv">
 					{skillSetData.language.map((skill, index) => (

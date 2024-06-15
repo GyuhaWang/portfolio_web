@@ -1,3 +1,4 @@
+import Carrer from '@/component/carrer';
 import Education from '@/component/education';
 import Projecct from '@/component/project';
 import SideBar from '@/component/sidebar';
@@ -10,6 +11,7 @@ const AboutMe = () => {
 			<div className="w-full">
 				<Skill />
 				<Education />
+				<Carrer/>
 				<Projecct />
 			</div>
 			{/* <SideBar/>

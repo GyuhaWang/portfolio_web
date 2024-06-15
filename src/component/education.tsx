@@ -10,9 +10,9 @@ const Education = () => {
 		<section
 			id="education"
 			ref={ref}>
-			<div className="aboutMeLayout">
+			<div className="aboutMeLayout gap-3">
 				<DurationBox>2018 -2024</DurationBox>
-				<div className="educationDiv">
+				<div className="educationDiv ">
 					<div>
 						<h1 className="educationTitle">한국외국어대학교</h1>
 
